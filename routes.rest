@@ -1,0 +1,27 @@
+GET http://localhost:3000/employees HTTP/1.1
+###
+GET http://localhost:3000/employees/6669ebc6597bb44595203191 HTTP/1.1
+###
+POST http://localhost:3000/employees HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "James",
+    "lastName": "Randall",
+    "department": "Sales",
+    "age": 42,
+    "isCurrentlyEmployed": false
+}
+###
+PUT http://localhost:3000/employees/6669f1e8fa31ff7a2b758a44 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "James",
+    "lastName": "Randall",
+    "department": "Sales",
+    "age": 42,
+    "isCurrentlyEmployed": true
+}
+###
+DELETE http://localhost:3000/employees/6669f564c8ee64ae81b7ed25 HTTP/1.1
