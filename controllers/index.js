@@ -32,6 +32,12 @@ const getSingleEmployee = async (req, res) => {
 
 const createEmployee = async (req, res) => {
   try {
+    if (typeof req.body.age !== "number") {
+      throw new Error("Age must be a valid number.");
+    }
+    if (typeof req.body.isCurrentlyEmployed !== "boolean") {
+      throw new Error("Current Employment must be a valid boolean.");
+    }
     const employee = {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -39,7 +45,6 @@ const createEmployee = async (req, res) => {
       age: req.body.age,
       isCurrentlyEmployed: req.body.isCurrentlyEmployed,
     };
-
     const response = await mongodb
       .getDb()
       .db()
@@ -61,6 +66,12 @@ const createEmployee = async (req, res) => {
 
 const updateEmployee = async (req, res) => {
   try {
+    if (typeof req.body.age !== "number") {
+      throw new Error("Age must be a valid number.");
+    }
+    if (typeof req.body.isCurrentlyEmployed !== "boolean") {
+      throw new Error("Current Employment must be a valid boolean.");
+    }
     const userId = new ObjectId(req.params.id);
     const employee = {
       firstName: req.body.firstName,

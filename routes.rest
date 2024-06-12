@@ -6,18 +6,18 @@ POST http://localhost:3000/employees HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "James",
-    "lastName": "Randall",
+    "firstName": "bob",
+    "lastName": "sda",
     "department": "Sales",
-    "age": 42,
-    "isCurrentlyEmployed": false
+    "age": 32,
+    "isCurrentlyEmployed": true
 }
 ###
 PUT http://localhost:3000/employees/6669f1e8fa31ff7a2b758a44 HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "James",
+    "firstName": "tom",
     "lastName": "Randall",
     "department": "Sales",
     "age": 42,
